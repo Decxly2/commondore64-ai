@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodore 64 & AI-Revolutionen | Internetmuseum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Subtil läs-progressindikator i toppen -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Bakgrund med dynamiskt rymdljus & stjärnor -->
+    <div class="cosmos-bg">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <canvas id="starfield"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <span class="retro-badge">C64</span>
+                <span class="logo-text">AI·HISTORIA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#artikeln">Artikeln</a>
+                <a href="#jamforelse">1982 vs Idag</a>
+                <a href="#reflektion">Reflektion</a>
+                <a href="https://internetmuseum.se/utstallningar/ai-historia/" target="_blank" class="nav-btn">Internetmuseum ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-wrapper">
+        <!-- Hero Sektion -->
+        <header class="hero-section">
+            <div class="badge-pill">
+                <span class="pulse-dot"></span>
+                <span>Internetmuseum · AI-Historia 1982</span>
+                <span class="badge-sep">•</span>
+                <span class="reading-time">Lästid: ~3 min</span>
+            </div>
+            <h1 class="hero-title">
+                När maskinen började <span class="gradient-text">tänka tillbaka</span>
+            </h1>
+            <p class="hero-lead">
+                En historisk analys av hur Commodore 64 flyttade de första "AI-motståndarna" från forskningslaboratorier rakt in i våra vardagsrum.
+            </p>
+
+            <!-- Nyckeltal / Snabbfakta med dynamisk räknare -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-num" data-target="1982">0</span>
+                    <span class="stat-label">Lanseringsår</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" data-target="64" data-suffix=" KB">0 KB</span>
+                    <span class="stat-label">Arbetsminne (RAM)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" data-target="17" data-prefix="~" data-suffix="M">~0M</span>
+                    <span class="stat-label">Sålda enheter i världen</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" data-target="1.02" data-suffix=" MHz" data-decimals="2">0.00 MHz</span>
+                    <span class="stat-label">Processor (MOS 6510)</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sektion 1: Artikelfördjupning -->
+        <section id="artikeln" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">Analys av vald artikel</span>
+                <h2>Commodore 64 & Hemdatorns Första AI-motståndare</h2>
+            </div>
+
+            <div class="editorial-grid">
+                <div class="editorial-main">
+                    <div class="feature-box highlight-border">
+                        <h3>Datorn som förändrade världen</h3>
+                        <p>
+                            Enligt Internetmuseums utställning markerade 1982 en historisk brytpunkt. Innan dess var datorer och konceptet om "artificiell intelligens" något abstrakt – förbehållet forskningsinstitut som MIT och Stanford, eller militära anläggningar. Med <strong>Commodore 64</strong> förändrades spelreglerna över en natt.
+                        </p>
+                        <p>
+                            Maskinen kunde kopplas direkt till hemmets befintliga tjock-TV och kostade en bråkdel av dåtidens professionella datorer. Det innebar att barn och unga plötsligt satt hemma i sovrummet och mötte en motståndare gjord av kretsar och kod.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Hur fungerade dåtidens "AI"?</h3>
+                        <p>
+                            Dagens AI bygger på djupa neurala nätverk, enorma träningsmängder data och sannolikhetsmodeller. På en Commodore 64 med <strong>64 kilobyte minne</strong> var det helt uteslutet. Istället skapade programmerarna genialiska <em>deterministiska regler</em>:
+                        </p>
+                        <ul class="custom-list">
+                            <li><strong>Tillståndsmaskiner (State Machines):</strong> Spelfigurer växlade mellan enkla lägen som "jaga", "fly" eller "patrullera" utifrån spelarens position.</li>
+                            <li><strong>Schack & Minimax:</strong> Spel som <em>Colossus Chess</em> räknade ut de bästa dragen genom att titta ett par steg framåt i ett beslutsträd med extremt optimerad assembler-kod.</li>
+                            <li><strong>Slump & Heuristik:</strong> Genom att addera små doser kontrollerad slump upplevde spelaren att datorn gjorde mänskliga misstag eller oväntade drag.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="editorial-sidebar">
+                    <div class="info-widget">
+                        <h4>Citat & Sammanhang</h4>
+                        <blockquote class="quote" id="c64Quote">
+                            "För första gången kunde barn sitta hemma och spela schack eller Pong mot en dator som svarade på deras drag. Känslan av att möta en 'tänkande' motståndare föddes här."
+                        </blockquote>
+                        <div class="quote-footer">
+                            <span class="quote-src">— Fritt tolkat från Internetmuseum</span>
+                            <button class="copy-quote-btn" id="copyQuoteBtn" title="Kopiera citatet till urklipp">Kopiera</button>
+                        </div>
+                    </div>
+
+                    <div class="info-widget tech-specs">
+                        <h4>Tekniska Begränsningar</h4>
+                        <div class="spec-row">
+                            <span>Grafik</span>
+                            <code>320 × 200 pixlar (16 färger)</code>
+                        </div>
+                        <div class="spec-row">
+                            <span>Ljudchip</span>
+                            <code>SID 6581 (3 kanaler)</code>
+                        </div>
+                        <div class="spec-row">
+                            <span>Lagring</span>
+                            <code>Kassettband / 5.25" diskett</code>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Sektion 2: Då vs Nu -->
+        <section id="jamforelse" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">Tekniksprånget</span>
+                <h2>1982 vs 2020-talet: Illusion kontra Intelligens</h2>
+                <p class="section-desc">Hur skiljer sig Commodore 64:s spel-AI från dagens generativa modeller?</p>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-card past">
+                    <div class="compare-badge">Då: 1982 (Commodore 64)</div>
+                    <h3>Regelstyrd Illusion</h3>
+                    <ul class="compare-points">
+                        <li><strong>Arkitektur:</strong> Hårdkodade IF/THEN-satser och manuellt skrivna algoritmer i maskinkod.</li>
+                        <li><strong>Minne:</strong> Totalt 64 000 bytes för både spelgrafik, ljud och logik.</li>
+                        <li><strong>Interaktion:</strong> Fasta mönster; när spelaren knäckt algoritmen vann man alltid.</li>
+                        <li><strong>Syfte:</strong> Skapa ett underhållande motstånd i ett avgränsat arkadspel.</li>
+                    </ul>
+                </div>
+
+                <div class="compare-card modern">
+                    <div class="compare-badge">Idag: 2020-talet (Moderna LLMs)</div>
+                    <h3>Autonom Generalisering</h3>
+                    <ul class="compare-points">
+                        <li><strong>Arkitektur:</strong> Djupa transformermodeller med hundratals miljarder parametrar.</li>
+                        <li><strong>Minne:</strong> Gigawatt-datacenter med terabyte av distribuerat RAM.</li>
+                        <li><strong>Interaktion:</strong> Dynamiskt resonerande, språkförståelse och adaptiv problemlösning.</li>
+                        <li><strong>Syfte:</strong> Generell assistans, kodgenerering, bildanalys och forskning.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 3: Analys och Reflektion -->
+        <section id="reflektion" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">Analys & Reflektion</span>
+                <h2>Teknikanalys & Slutsatser</h2>
+                <p class="section-desc">Insikter kring artikeln och hur hemdatorns framfart lade grunden för modern artificiell intelligens.</p>
+            </div>
+
+            <div class="reflection-wrapper">
+                <div class="reflection-card">
+                    <div class="reflection-num">01</div>
+                    <div class="reflection-body">
+                        <h3>Magi kontra ingenjörskonst</h3>
+                        <p>
+                            Det mest slående med artikeln är den enorma klyftan mellan hårdvarans begränsningar och användarens upplevelse. Med bara 64 kilobyte minne – vilket inte ens räcker för att ladda en bråkdel av en modern ikonfil idag – lyckades utvecklarna skapa en övertygande illusion av en tänkande motståndare. Det bevisar att upplevd intelligens i ett gränssnitt ofta handlar lika mycket om god systemdesign som om rå beräkningskraft.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-num">02</div>
+                    <div class="reflection-body">
+                        <h3>Demokratiseringen lade grunden för dagens AI-våg</h3>
+                        <p>
+                            Utan Commodore 64 och hemdatormarknadens genombrott hade tekniklandskapet sett fundamentalt annorlunda ut. C64 gjorde datorer folkliga och tillgängliga för en bred allmänhet. De utvecklare och forskare som decennier senare banade väg för modern mjukvara och maskininlärning började ofta sin resa genom att utforska och programmera just dessa tidiga 8-bitarsmaskiner.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-num">03</div>
+                    <div class="reflection-body">
+                        <h3>Historisk kontext i Internetmuseums utställning</h3>
+                        <p>
+                            Internetmuseum gör ett viktigt arbete i att belysa hur vardagliga innovationer som hemdatorer och spel format tekniksamhället. Det är lätt att tro att AI uppstod i ett vakuum under de senaste årens språkmodeller, men utvecklingen har pågått i decennier. Att förstå denna bakgrund ger en betydligt mer nyanserad bild av var teknikbranschen befinner sig idag.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-meta">
+                <span class="meta-tag">HTML5 / Modern CSS</span>
+                <a href="https://internetmuseum.se/utstallningar/ai-historia/" target="_blank" class="meta-tag meta-link">Källa: internetmuseum.se ↗</a>
+            </div>
+            <div class="footer-actions">
+                <button id="triviaBtn" class="footer-btn">Slumpa fakta</button>
+                <button id="scrollTopBtn" class="footer-btn">Till toppen ↑</button>
+            </div>
+        </div>
+        <!-- Toast för slumpad fakta -->
+        <div id="triviaToast" class="trivia-toast" aria-live="polite"></div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
